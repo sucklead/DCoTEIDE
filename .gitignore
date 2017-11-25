@@ -1,11 +1,9 @@
 
 \.metadata/
-DCoTE/src/*/*
-!DCoTE/src/scripts/.gitkeep
-!DCoTE/src/gamescripts/.gitkeep
-DCoTE/bin/*/*
-!DCoTE/bin/scripts/.gitkeep
-!DCoTE/bin/gamescripts/.gitkeep
+DCoTE/**/*.bin
+DCoTE/**/*.bat
+DCoTE/**/*.lst
+DCoTE/**/*.hfs
 
 naf/original/*
 !naf/original/.gitkeep
