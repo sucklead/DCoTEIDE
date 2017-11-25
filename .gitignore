@@ -1,11 +1,22 @@
 
 \.metadata/
+DCoTE/src/*/*
+!DCoTE/src/scripts/.gitkeep
+!DCoTE/src/gamescripts/.gitkeep
+DCoTE/bin/*/*
+!DCoTE/bin/scripts/.gitkeep
+!DCoTE/bin/gamescripts/.gitkeep
 
-DCoTE/src/
-DCoTE/bin/
+naf/original/*
+!naf/original/.gitkeep
+naf/split/*
+!naf/split/.gitkeep
+naf/new/*
+!naf/new/.gitkeep
 
-naf/original/
-naf/split/
-
-xbd/original/
-xbd/split/
+xbd/original/*
+!xbd/original/.gitkeep
+xbd/split/*
+!xbd/split/.gitkeep
+xbd/new/*
+!xbd/new/.gitkeep
