@@ -1,4 +1,11 @@
 
 \.metadata/
-\DCoTE/src/
-\DCoTE/bin/
+
+DCoTE/src/
+DCoTE/bin/
+
+naf/original/
+naf/split/
+
+xbd/original/
+xbd/split/
