@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.hfs": "csharp"
+    },
+    "triggerTaskOnSave.tasks": {
+        "BuildCurrent": ["**/*.hfs"]
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.gitkeep": true
+    },
+    "csharp.suppressDotnetInstallWarning": true,
+    "terminal.integrated.scrollback": 10000
+}

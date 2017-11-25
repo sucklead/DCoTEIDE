@@ -4,21 +4,114 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile scripts",
+            "identifier": "CopyOriginal",
+            "label": "Copy Original bat files into originalbat",
             "type": "shell",
-            "command": "./DCoTE/tools/SucCompiler.exe",
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "command": "copy \\\"S:\\Games\\Call Of Cthulhu DCoTE\\Scripts/*.bat\\\" ./DCoTE/originalbat",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
             },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "UnbatchOriginal",
+            "label": "Unbatch Original bat files into originalbin",
+            "type": "shell",
+            "command": "./DCoTE/tools/SucUnBatch.exe",
+            "group": "build",
             "args": [
-                "./DCoTE/src",
-                "./DCoTE/bin"
+                "./DCoTE/originalbat",
+                "./DCoTE/originalbin",
+                "./DCoTE/filelist"
             ],
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "CompileAllOld",
+            "label": "Compile ALL scripts from src to oldbin",
+            "type": "shell",
+            "command": "./DCoTE/tools/SucCompilerOld.exe",
+            "group": "build",
+            "args": [
+                "./DCoTE/src",
+                "./DCoTE/oldbin"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "CompileAll",
+            "label": "Compile ALL scripts from src to newbin",
+            "type": "shell",
+            "command": "./DCoTE/tools/SucCompiler.exe",
+            "group": "build",
+            "args": [
+                "./DCoTE/src",
+                "./DCoTE/newbin"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "BatchAll",
+            "label": "Batch ALL binary files into bat files in newbat",
+            "type": "shell",
+            "command": "./DCoTE/tools/SucBatch.exe",
+            "group": "build",
+            "args": [
+                "./DCoTE/newbin",
+                "./DCoTE/filelist",
+                "./DCoTE/newbat"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "BuildAll",
+            "label": "Compile ALL source files & batch ALL binary files into bat files in newbat",
+            "dependsOn": ["CompileAll","BatchAll"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
+        },
+        {
+            "identifier": "CompileCurrent",
+            "label": "Compile current file from src to newbin",
+            "type": "shell",
+            "command": "./DCoTE/tools/SucCompiler.exe",
+            "group": "build",
+            "args": [
+                "./DCoTE/src",
+                "./DCoTE/newbin",
+                "./${relativeFile}"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "identifier": "BuildCurrent",
+            "label": "Compile current file & batch ALL binary files into bat files in newbat",
+            "dependsOn": ["CompileCurrent", "BatchAll"],
+            "group": "build"
         }
     ]
 }
