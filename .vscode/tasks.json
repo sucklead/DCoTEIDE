@@ -73,7 +73,8 @@
             "args": [
                 "./DCoTE/newbin",
                 "./DCoTE/filelist",
-                "./DCoTE/newbat"
+                "./DCoTE/newbat",
+                "true"
             ],
             "presentation": {
                 "reveal": "always",
